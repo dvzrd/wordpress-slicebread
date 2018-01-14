@@ -120,17 +120,19 @@ class Atframework_Employees extends WP_Widget {
 
 				<div class="employees-area clearfix">
 					<?php while ( $employees->have_posts() ) : $employees->the_post(); ?>
-						<div class="employee astrid-3col">
-							<?php if ( has_post_thumbnail() ) : ?>
-							<div class="employee-thumb">
-								<?php the_post_thumbnail('astrid-small-thumb'); ?>
+						<a class="employee-wrapper" href="<?php the_permalink(); ?>">
+							<div class="employee">
+								<?php if ( has_post_thumbnail() ) : ?>
+								<div class="employee-thumb">
+									<?php the_post_thumbnail('astrid-small-thumb'); ?>
+								</div>
+								<?php endif; ?>
+								<div class="employee-content">
+									<h3 class="employee-title"><?php the_title(); ?></h3>
+									<?php echo wp_trim_words( get_the_content(), 12 ); ?>
+								</div>
 							</div>
-							<?php endif; ?>
-							<div class="employee-content">
-								<h3 class="employee-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<?php echo wp_trim_words( get_the_content(), 12 ); ?>
-							</div>
-						</div>
+						</a>
 					<?php endwhile; ?>
 				</div>
 

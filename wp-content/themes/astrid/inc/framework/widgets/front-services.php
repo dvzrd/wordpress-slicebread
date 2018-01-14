@@ -121,7 +121,7 @@ class Atframework_Services extends WP_Widget {
 
 				<div class="service-area clearfix">
 					<?php while ( $services->have_posts() ) : $services->the_post(); ?>
-						<div class="service astrid-3col">
+						<div class="service">
 							<?php if ( has_post_thumbnail() ) : ?>
 							<div class="service-thumb">
 								<?php the_post_thumbnail('astrid-small-thumb'); ?>

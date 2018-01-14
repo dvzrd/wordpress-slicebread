@@ -121,13 +121,15 @@ class Atframework_Clients extends WP_Widget {
 
 				<div class="client-area clearfix">
 					<?php while ( $clients->have_posts() ) : $clients->the_post(); ?>
-						<div class="client">
-							<?php if ( has_post_thumbnail() ) : ?>
-							<div class="client-thumb">
-								<?php the_post_thumbnail('astrid-client-thumb'); ?>
+						<a class="client-wrapper" href="<?php echo get_the_content(); ?>" target="_blank">
+							<div class="client">
+								<?php if ( has_post_thumbnail() ) : ?>
+								<div class="client-thumb">
+									<?php the_post_thumbnail('astrid-client-thumb'); ?>
+								</div>
+								<?php endif; ?>
 							</div>
-							<?php endif; ?>
-						</div>
+						</a>
 					<?php endwhile; ?>
 				</div>
 
