@@ -35,7 +35,9 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'footer', 'depth' => '1', 'menu_id' => 'footer-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
 				<div class="site-copyright">
-					<?php do_action('astrid_footer'); ?>
+					<!-- <?php do_action('astrid_footer'); ?> -->
+					<!-- DEV NOTE: Do NOT remove this without the author's consent (dvazgird@gmail.com) -->
+					© 2018, <a class="site-author" href="http://damirvazgird.com" target="_blank">Damir Vazgird</a>. All rights reserved.
 				</div>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->

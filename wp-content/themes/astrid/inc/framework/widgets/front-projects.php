@@ -121,16 +121,18 @@ class Atframework_Projects extends WP_Widget {
 
 				<div class="projects-area clearfix">
 					<?php while ( $projects->have_posts() ) : $projects->the_post(); ?>
-						<div class="project">
-							<?php if ( has_post_thumbnail() ) : ?>
-							<div class="project-thumb">
-								<?php the_post_thumbnail('astrid-project-thumb'); ?>
-								<div class="project-content">
-									<h3 class="project-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								</div>								
+						<a class="project-wrapper" href="<?php the_permalink(); ?>">
+							<div class="project">
+								<?php if ( has_post_thumbnail() ) : ?>
+								<div class="project-thumb">
+									<?php the_post_thumbnail('astrid-project-thumb'); ?>
+									<div class="project-content">
+										<h3 class="project-title"><?php the_title(); ?></h3>
+									</div>								
+								</div>
+								<?php endif; ?>
 							</div>
-							<?php endif; ?>
-						</div>
+						</a>
 					<?php endwhile; ?>
 				</div>
 
